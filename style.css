@@ -41,6 +41,7 @@ font-family: "Playfair Display", serif; /* Ganti dengan font pilihan Anda */
 }
 .background-images-wrapper {
     display: flex;
+    
     height: 100%;
    /* Menggunakan 40s untuk durasi total (10s per foto) dan menyetel animasi */
     animation: imageSlide 40s cubic-bezier(0.5, 0, 0.5, 1) infinite;
