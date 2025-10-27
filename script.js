@@ -19,21 +19,22 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 // Tambahkan fungsi ini di dalam document.addEventListener('DOMContentLoaded', ...) jika Anda menggunakannya
+// === PERBARUI FUNGSI INI DI script.js ===
 function showImage(src, title) {
-    // 1. Dapatkan elemen gambar di dalam modal
     var modalImage = document.getElementById('modalImage');
-    
-    // 2. Dapatkan elemen judul di dalam modal
     var modalTitle = document.getElementById('imageModalLabel');
     
-    // 3. Atur sumber (src) dan teks alternatif gambar
+    // 1. Atur sumber dan judul
     modalImage.src = src;
     modalImage.alt = title;
-    
-    // 4. Atur judul di modal
     modalTitle.textContent = title;
+
+    // 2. Tampilkan Modal secara eksplisit menggunakan JavaScript
+    //    Kita harus membuat instance Modal terlebih dahulu.
+    var imageModalElement = document.getElementById('imageModal');
+    var imageModal = new bootstrap.Modal(imageModalElement);
     
-    // Bootstrap Modal akan otomatis muncul karena data-bs-toggle di HTML
+    imageModal.show(); // Perintah untuk menampilkan Modal
 }
 // ===========================================
 // FUNGSI PAGINASI GALERI FOTO
