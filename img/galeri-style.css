@@ -1,0 +1,59 @@
+/* ==================================== */
+/* Gaya Khusus Galeri Foto (galeri-style.css) */
+/* ==================================== */
+
+/* Mengatur jarak konten dari navbar fixed-top */
+main {
+    padding-top: 56px; /* Sesuaikan dengan tinggi navbar Anda */
+}
+.navbar {
+    background-color: #b26d50 !important; /* Gunakan warna coklat yang terlihat di gambar lama Anda */
+    border-bottom: 3px solid #f1f1f1; /* Opsional: Menambahkan garis bawah tipis */
+}
+
+/* Gaya untuk gambar thumbnail di galeri */
+.album-img {
+    cursor: pointer; 
+    transition: transform 0.2s ease-in-out; /* Animasi halus saat hover */
+    background-color: #ffffff ; /* Latar belakang abu-abu terang */
+    display: block; /* Penting untuk menjaga ukuran block */
+    height: 200px; /* Tinggi seragam untuk semua gambar */
+    width: 100%;
+    object-fit: cover; /* Memastikan gambar mengisi area tanpa terdistorsi */
+    border: 4px solid #333333; /* Border: 3px tebal, solid, warna hitam gelap (#333333) */
+    padding: 2px; /* Opsional: Sedikit jarak antara gambar dan border (jika diperlukan) */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+#gallery{
+    background-color: #b1ada6 !important;
+}
+
+.album-img:hover {
+    transform: scale(1.03); /* Sedikit efek zoom saat di-hover */
+    border-color: #e2dada;
+}
+
+/* Kustomisasi Modal untuk tampilan Lightbox */
+#imageModal .modal-content {
+    background-color: rgba(52, 45, 45, 0.9); /* Latar belakang modal gelap */
+    border: none;
+}
+
+#imageModal .modal-header {
+    border-bottom: none;
+}
+
+#imageModal .modal-title {
+    color: #fff; /* Judul modal berwarna putih */
+}
+
+#imageModal .btn-close {
+    filter: invert(1); /* Tombol close berwarna putih agar terlihat */
+}
+
+/* Gambar di dalam modal */
+#modalImage {
+    max-height: 90vh; /* Batasi tinggi gambar agar muat di layar */
+    width: auto;
+    max-width: 100%;
+}
