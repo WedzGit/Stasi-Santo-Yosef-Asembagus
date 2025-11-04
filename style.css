@@ -179,3 +179,58 @@ font-family: "Playfair Display", serif; /* Ganti dengan font pilihan Anda */
     background-color: #b26d50 !important; /* Gunakan warna coklat yang terlihat di gambar lama Anda */
     border-bottom: 3px solid #f1f1f1; /* Opsional: Menambahkan garis bawah tipis */
 }
+/* ==================================== */
+/* Gaya Tombol Sosial Media (Perbaikan Akhir) */
+/* ==================================== */
+
+/* Kontainer Sosial Media */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px; 
+    flex-wrap: wrap; 
+}
+
+.social-btn {
+    display: flex; 
+    align-items: center;
+    justify-content: center; 
+    
+    /* Ukuran dan Bentuk Logo Lingkaran */
+    width: 50px; 
+    height: 50px; 
+    border-radius: 50%; 
+    
+    color: #ffffff; /* Warna ikon HARUS PUTIH agar terlihat di atas background warna */
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    /* Hapus semua properti font-size: 0; */
+}
+
+/* Modifikasi Gaya Ikon */
+.social-btn i {
+    font-size: 1.8em; /* Ukuran Ikon */
+    margin-right: 0; 
+    /* Pastikan warna ikon diwariskan dari .social-btn (yaitu #ffffff) */
+}
+
+/* Warna Latar Belakang Khusus (PASTIKAN KODE INI ADA) */
+.instagram-bg {
+    /* Gradient Instagram */
+    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+    border: none;
+}
+
+.facebook-bg {
+    background-color: #3b5998; /* Warna Biru Facebook */
+    border: none;
+}
+
+/* Efek Hover */
+.social-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    color: #ffffff; 
+}
