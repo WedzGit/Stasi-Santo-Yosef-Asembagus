@@ -131,3 +131,70 @@ document.addEventListener('DOMContentLoaded', function() {
     createPaginationButtons();
     displayPage(1); // Tampilkan halaman pertama saat halaman dimuat
 });
+// FITUR KONTAK GMAIL/EMAIL OTOMATIS (DIMODIFIKASI UNTUK KLIK & COPY)
+document.addEventListener('DOMContentLoaded', function () {
+    const contactList = document.querySelector('#contact .list-unstyled');
+    if (!contactList) return; 
+    if (contactList.querySelector('.email-contact')) return;
+
+    // Data Alamat Email, Subjek, dan Isi Pesan
+    const emailAddress = 'stasisantoyosefasembagus@gmail.com'; 
+    const subject = 'Permintaan Informasi dari Website Stasi'; 
+    const body = 'Yth. Pengurus Stasi Santo Yosep Asembagus,\n\nSaya ingin menanyakan tentang...';
+    
+    const mailtoHref = 'mailto:' + emailAddress + 
+                       '?subject=' + encodeURIComponent(subject) + 
+                       '&body=' + encodeURIComponent(body);
+
+    const li = document.createElement('li');
+    li.className = 'email-contact d-flex align-items-center mt-2'; // Menggunakan flex untuk tata letak
+
+    // === ELEMEN 1: IKON KLIK (Tautan Mailto) ===
+    const iconLink = document.createElement('a');
+    iconLink.href = mailtoHref;
+    iconLink.className = 'text-decoration-none me-2';
+    iconLink.setAttribute('aria-label', 'Kirim Email ke Gereja Santo Yosep');
+    iconLink.innerHTML = '<i class="bi bi-envelope-fill text-primary fs-4" aria-hidden="true"></i>'; // Ikon lebih besar
+
+    // === ELEMEN 2: TEKS COPY (Teks yang bisa disalin) ===
+    const textSpan = document.createElement('span');
+    textSpan.className = 'contact-text fw-bold';
+    textSpan.textContent = 'Email: ' + emailAddress;
+
+    li.appendChild(iconLink);
+    li.appendChild(textSpan);
+    contactList.appendChild(li);
+});
+// FITUR KONTAK WHATS'APP (DIMODIFIKASI UNTUK KLIK & COPY)
+document.addEventListener('DOMContentLoaded', function () {
+    const contactList = document.querySelector('#contact .list-unstyled');
+    if (!contactList) return; 
+    if (contactList.querySelector('.whatsapp-contact')) return;
+
+    // Data nomor & pesan
+    const phone = '6283848307342'; // Pastikan hanya angka, tanpa '+' atau '-'
+    const phoneDisplay = '+62 838-4830-7342'; // Nomor untuk ditampilkan
+    const prefilled = 'Halo Stasi Santo Yosep Asembagus';
+    const href = 'https://wa.me/' + phone + '?text=' + encodeURIComponent(prefilled);
+
+    const li = document.createElement('li');
+    li.className = 'whatsapp-contact d-flex align-items-center mb-1'; // Menggunakan flex untuk tata letak
+
+    // === ELEMEN 1: IKON KLIK (Tautan WhatsApp) ===
+    const iconLink = document.createElement('a');
+    iconLink.href = href;
+    iconLink.target = '_blank';
+    iconLink.rel = 'noopener noreferrer';
+    iconLink.className = 'text-decoration-none me-2'; // Margin kanan kecil
+    iconLink.setAttribute('aria-label', 'Chat WhatsApp Gereja Santo Yosep');
+    iconLink.innerHTML = '<i class="bi bi-whatsapp text-success fs-4" aria-hidden="true"></i>'; // Ikon lebih besar
+
+    // === ELEMEN 2: TEKS COPY (Teks yang bisa disalin) ===
+    const textSpan = document.createElement('span');
+    textSpan.className = 'contact-text fw-bold';
+    textSpan.textContent = 'WhatsApp: ' + phoneDisplay;
+
+    li.appendChild(iconLink);
+    li.appendChild(textSpan);
+    contactList.appendChild(li);
+});
