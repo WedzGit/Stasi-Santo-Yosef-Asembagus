@@ -177,10 +177,35 @@ font-family: "Playfair Display", serif;
     background-color: #b26d50 !important; /* Gunakan warna coklat yang terlihat di gambar lama Anda */
     border-bottom: 3px solid #f1f1f1; /* Opsional: Menambahkan garis bawah tipis */
 }
-/* ==================================== */
-/* Gaya Tombol Sosial Media (Perbaikan Akhir) */
-/* ==================================== */
+.navbar-nav .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        
+.navbar-nav .nav-link:hover {
+            color: rgba(255, 255, 255, 0.8) !important;
+        }
+        
+        /* Efek underline pada hover */
+.navbar-nav .nav-link::after {
+content: '';
+position: absolute;
+width: 0;
+height: 2px;
+bottom: 0;
+left: 0;
+background-color: rgba(255, 251, 251, 0.8);
+transition: width 0.7s ease;
+}
+        
+.navbar-nav .nav-link:hover::after {
+    width: 100%;
+}
 
+/* Padding tambahan untuk navbar fixed */
+body {
+    padding-top: 56px;
+}
 /* Kontainer Sosial Media */
 .social-links {
     display: flex;
@@ -231,4 +256,5 @@ font-family: "Playfair Display", serif;
     transform: translateY(-2px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
     color: #ffffff; 
+
 }
