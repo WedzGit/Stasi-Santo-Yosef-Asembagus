@@ -183,7 +183,7 @@ font-family: "Playfair Display", serif;
         }
         
 .navbar-nav .nav-link:hover {
-            color: rgba(255, 255, 255, 0.8) !important;
+            color: rgb(255, 255, 255) !important;
         }
         
         /* Efek underline pada hover */
@@ -258,3 +258,4 @@ body {
     color: #ffffff; 
 
 }
+
