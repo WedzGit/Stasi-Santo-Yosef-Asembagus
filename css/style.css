@@ -113,7 +113,7 @@ font-family: "Playfair Display", serif;
     font-size: 1.2rem;
 }
 .btn-custom-yosef:hover {
-    background-color: #ffffff; /* Warna saat tombol dihover */
+    background-color: #ffffff; 
     border-color: #ffffff;
 }
 
@@ -206,6 +206,10 @@ transition: width 0.7s ease;
 body {
     padding-top: 56px;
 }
+/* ==================================== */
+/* Gaya Tombol Sosial Media (Perbaikan Akhir) */
+/* ==================================== */
+
 /* Kontainer Sosial Media */
 .social-links {
     display: flex;
@@ -256,6 +260,19 @@ body {
     transform: translateY(-2px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
     color: #ffffff; 
-
 }
-
+#map {
+  height: 200px;
+  width: 300px;
+  border: 3px solid #fffdfc;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2); 
+  margin-top: 20px;
+}
+#map:hover {
+  border-color: #8B4513;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+}
+.leaflet-control-attribution {
+  display: none;
+}
