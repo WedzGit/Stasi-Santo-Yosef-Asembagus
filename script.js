@@ -36,6 +36,7 @@ function showImage(src, title) {
     
     imageModal.show(); // Perintah untuk menampilkan Modal
 }
+
 // ===========================================
 // FUNGSI PAGINASI GALERI FOTO
 // ===========================================
@@ -47,19 +48,14 @@ document.addEventListener('DOMContentLoaded', function() {
     // Keluar jika tidak ada album di halaman ini (penting untuk halaman lain)
     if (albums.length === 0) return; 
 
-
-                        // ATUR PAGES DI BAWAH INI DI "const itemsPerPage = (3) <<< YANG DIGANTI"
+            //<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+                        // ATUR PAGES DI BAWAH INI DI "const itemsPerPage = (number) <<< YANG DIGANTI"
     const itemsPerPage = 5; // <<< ATUR JUMLAH ALBUM PER HALAMAN DI SINI
     const totalPages = Math.ceil(albums.length / itemsPerPage);
     const paginationContainer = document.getElementById('gallery-pagination');
+            //<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-
-
-
-
-    // ------------------------------------------
     // A. Fungsi untuk Mengganti Halaman Tampilan
-    // ------------------------------------------
     function displayPage(pageNumber) {
         const startIndex = (pageNumber - 1) * itemsPerPage;
         const endIndex = startIndex + itemsPerPage;
@@ -86,16 +82,13 @@ document.addEventListener('DOMContentLoaded', function() {
         // Gulir (Scroll) ke bagian atas Galeri setelah berpindah halaman
         const gallerySection = document.getElementById('gallery');
         if (gallerySection) {
-            // Memberi sedikit ruang dari navbar
             const navbarHeight = 70; 
             const topPosition = gallerySection.offsetTop - navbarHeight;
             window.scrollTo({ top: topPosition, behavior: 'smooth' });
         }
     }
 
-    // ------------------------------------------
     // B. Fungsi untuk Membuat Tombol Paginasi
-    // ------------------------------------------
     function createPaginationButtons() {
         // Hapus tombol yang mungkin sudah ada
         paginationContainer.innerHTML = ''; 
@@ -172,7 +165,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (contactList.querySelector('.whatsapp-contact')) return;
 
     // Data nomor & pesan
-    const phone = '6283848307342'; // Pastikan hanya angka, tanpa '+' atau '-'
+    const phone = '6283848307342'; //Hanya angka, tanpa '+' atau '-'
     const phoneDisplay = '+62 838-4830-7342'; // Nomor untuk ditampilkan
     const prefilled = 'Halo Stasi Santo Yosep Asembagus';
     const href = 'https://wa.me/' + phone + '?text=' + encodeURIComponent(prefilled);
@@ -198,3 +191,35 @@ document.addEventListener('DOMContentLoaded', function () {
     li.appendChild(textSpan);
     contactList.appendChild(li);
 });
+// Inisialisasi peta dengan koordinat dari Google Maps
+var map = L.map('map').setView([-7.7502331, 114.2268863], 15); 
+// angka 15 = zoom level default
+
+// Tambahkan tile layer
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '© OpenStreetMap contributors'
+}).addTo(map);
+
+var topoLayer = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+  attribution: '© OpenTopoMap contributors'
+});
+
+// Custom icon untuk marker
+var customIcon = L.icon({
+  iconUrl: 'img/styoseflogo.png', // ganti dengan path ikonmu
+  iconSize: [32, 32],
+  iconAnchor: [16, 32],
+  popupAnchor: [0, -32]
+});
+// Marker utama
+// Tambahkan marker di lokasi
+var marker = L.marker([-7.7502331, 114.2268863]).addTo(map);
+marker.bindPopup("<b>Gereja Katolik Stasi Santo Yosep</b><br>Asembagus, Situbondo").openPopup();
+
+locations.forEach
+(function(loc) 
+{
+  L.marker([loc.lat, loc.lng]).addTo(map)
+    .bindPopup("<b>" + loc.name + "</b>");
+});
+L.control.layers(baseMaps).addTo(map);
