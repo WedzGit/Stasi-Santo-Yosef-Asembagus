@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             //<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
                         // ATUR PAGES DI BAWAH INI DI "const itemsPerPage = (number) <<< YANG DIGANTI"
-    const itemsPerPage = 5; // <<< ATUR JUMLAH ALBUM PER HALAMAN DI SINI
+    const itemsPerPage = 4; // <<< ATUR JUMLAH ALBUM PER HALAMAN DI SINI
     const totalPages = Math.ceil(albums.length / itemsPerPage);
     const paginationContainer = document.getElementById('gallery-pagination');
             //<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -223,3 +223,4 @@ locations.forEach
     .bindPopup("<b>" + loc.name + "</b>");
 });
 L.control.layers(baseMaps).addTo(map);
+
