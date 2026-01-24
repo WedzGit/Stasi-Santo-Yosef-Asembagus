@@ -223,4 +223,15 @@ locations.forEach
     .bindPopup("<b>" + loc.name + "</b>");
 });
 L.control.layers(baseMaps).addTo(map);
+// FITUR LAZY LOAD OTOMATIS
+document.addEventListener('DOMContentLoaded', function() {
+    // 1. Cari semua gambar di dalam album
+    const images = document.querySelectorAll('.album-img');
 
+    // 2. Berikan atribut loading="lazy" ke setiap gambar
+    images.forEach(img => {
+        img.setAttribute('loading', 'lazy');
+    });
+
+    console.log(images.length + " foto sekarang menggunakan Lazy Load.");
+});
