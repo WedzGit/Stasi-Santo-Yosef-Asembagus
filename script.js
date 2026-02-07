@@ -18,7 +18,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
-// Tambahkan fungsi ini di dalam document.addEventListener('DOMContentLoaded', ...) jika Anda menggunakannya
 // === PERBARUI FUNGSI INI DI script.js ===
 function showImage(src, title) {
     var modalImage = document.getElementById('modalImage');
@@ -191,38 +190,43 @@ document.addEventListener('DOMContentLoaded', function () {
     li.appendChild(textSpan);
     contactList.appendChild(li);
 });
-// Inisialisasi peta dengan koordinat dari Google Maps
-var map = L.map('map').setView([-7.7502331, 114.2268863], 15); 
-// angka 15 = zoom level default
+// Inisialisasi peta dengan koordinat dari Google Maps (jika Leaflet tersedia)
+if (typeof L !== 'undefined' && document.getElementById('map')) {
+  var map = L.map('map').setView([-7.7502331, 114.2268863], 15); 
+  // angka 15 = zoom level default
 
-// Tambahkan tile layer
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  attribution: '© OpenStreetMap contributors'
-}).addTo(map);
+  // Tambahkan tile layer
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© OpenStreetMap contributors'
+  }).addTo(map);
 
-var topoLayer = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
-  attribution: '© OpenTopoMap contributors'
-});
+  var topoLayer = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+    attribution: '© OpenTopoMap contributors'
+  });
 
-// Custom icon untuk marker
-var customIcon = L.icon({
-  iconUrl: 'img/styoseflogo.png', // ganti dengan path ikonmu
-  iconSize: [32, 32],
-  iconAnchor: [16, 32],
-  popupAnchor: [0, -32]
-});
-// Marker utama
-// Tambahkan marker di lokasi
-var marker = L.marker([-7.7502331, 114.2268863]).addTo(map);
-marker.bindPopup("<b>Gereja Katolik Stasi Santo Yosep</b><br>Asembagus, Situbondo").openPopup();
+  // Custom icon untuk marker
+  var customIcon = L.icon({
+    iconUrl: 'img/styoseflogo.png', // ganti dengan path ikonmu
+    iconSize: [32, 32],
+    iconAnchor: [16, 32],
+    popupAnchor: [0, -32]
+  });
 
-locations.forEach
-(function(loc) 
-{
-  L.marker([loc.lat, loc.lng]).addTo(map)
-    .bindPopup("<b>" + loc.name + "</b>");
-});
-L.control.layers(baseMaps).addTo(map);
+  // Marker utama
+  var marker = L.marker([-7.7502331, 114.2268863], {icon: customIcon}).addTo(map);
+  marker.bindPopup("<b>Gereja Katolik Stasi Santo Yosep</b><br>Asembagus, Situbondo").openPopup();
+
+  if (typeof locations !== 'undefined' && Array.isArray(locations)) {
+    locations.forEach(function(loc) {
+      L.marker([loc.lat, loc.lng]).addTo(map)
+        .bindPopup("<b>" + loc.name + "</b>");
+    });
+  }
+
+  if (typeof baseMaps !== 'undefined') {
+    L.control.layers(baseMaps).addTo(map);
+  }
+}
 // FITUR LAZY LOAD OTOMATIS
 document.addEventListener('DOMContentLoaded', function() {
     // 1. Cari semua gambar di dalam album
