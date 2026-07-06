@@ -5,7 +5,7 @@
 <meta property="og:image" content="https://stasi-santo-yosep-asb.vercel.app/img/styoseflogo.png">
     <meta property="og:title" content="Gereja Katolik Stasi Santo Yosep Asembagus">
     <meta property="og:description" content="Informasi misa, doa, dan kegiatan Gereja Katolik Stasi Santo Yosep Asembagus.">
-    <meta name="description" content="Website Gereja Katolik Stasi Santo Yosep Assembagus, juga dikenal sebagai Santo Yosef atau Santo Yusuf.">
+    <meta name="description" content="Website resmi Gereja Katolik Stasi Santo Yosep Asembagus merupakan sebuah landing page statis yang berfungsi sebagai profil digital komunitas. Kontennya berfokus pada penyediaan informasi utama berupa doa, serta detail kontak resmi seperti alamat email, peta lokasi, dan tautan sosial media. Dengan struktur sederhana dan ringkas, situs ini berperan sebagai company profile mini yang menampilkan identitas gereja sekaligus memudahkan umat maupun pengunjung untuk menemukan informasi dasar dan menghubungi pengelola. Juga dikenal sebagai Santo Yosef atau Santo Yusuf.">
     <meta name="google-site-verification" content="vDjFOuqG0ucE0DjwWVMZizUFJoJyp2jaoaSylqKEXTs" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,8 +17,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <!-- Google Maps iframe will be used as a fallback (no API key) -->
     <link rel="icon" type="image/png" href="img/styoseflogo.png">
     <link rel="stylesheet" href="css/style.css">
 
@@ -137,7 +136,9 @@
         </div>
         <div><br>
             <h6>Lokasi Gereja Katolik Santo Yosep Asembagus</h6>
-            <div id="map"></div>
+            <div class="map-wrapper">
+                <iframe class="map-iframe" title="Peta lokasi Gereja Katolik Stasi Santo Yosep Asembagus" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3309.9201719294383!2d114.22430600968669!3d-7.750227776809549!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd12b34cea61ae1%3A0xb67f18dd697590e4!2sGereja%20Katolik%20Stasi%20Santo%20Yosef%2C%20Asembagus!5e1!3m2!1sid!2sid!4v1783050114383!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            </div>
         </div>
     </section>
 
