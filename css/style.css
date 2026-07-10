@@ -106,7 +106,7 @@ font-family: "Playfair Display", serif;
     }
  }/* biasanya untuk masalah tambah img berada di persen dan translX (persen) nya  */
 .btn-custom-yosef {
-    background-color: #8B4513 !important; /* Contoh: Coklat */
+    background-color: #8B4513 !important;
     border-color: #8B4513;
     color: #ffffff;
     padding: 12px 12px;
@@ -183,10 +183,9 @@ font-family: "Playfair Display", serif;
         }
         
 .navbar-nav .nav-link:hover {
+            /* Efek underline pada hover */
             color: rgb(255, 255, 255) !important;
         }
-        
-        /* Efek underline pada hover */
 .navbar-nav .nav-link::after {
 content: '';
 position: absolute;
