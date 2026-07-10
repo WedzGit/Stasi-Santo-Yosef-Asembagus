@@ -1,12 +1,7 @@
-*.jpg
-*.jpeg
-*.png
-*.webp
+# Jangan upload gambar (KECUALI folder aset)
+img/galeri/
+img/galeri/**/*
 
-img/
-gallery/
-uploads/
-
-node_modules/
-.vercel/
-dist/
+# System files
+.DS_Store
+Thumbs.db
